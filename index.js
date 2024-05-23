@@ -15,6 +15,6 @@ app.listen(PORT, (req, res)=>{
 })
 
 app.get("/",(req,res)=>{
-    res.send("<h1>This ia HOMEPAGE friends</h1>");
+    res.send("<h1>This is HOMEPAGE my friends!!</h1>");
     // console.log("This is HOMEPAGE friends.");
 })
