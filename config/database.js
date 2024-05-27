@@ -1,4 +1,4 @@
-const mnongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 require("dotenv").config();
 
@@ -14,6 +14,6 @@ const dbConnect = ()=>{
     console.log(err);
     process.exit(1);
 })
-}
+};
 
 module.exports = dbConnect;
