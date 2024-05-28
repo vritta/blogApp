@@ -8,7 +8,7 @@ const {createComment} = require("../controllers/commentController");
 //mapping create
 router.get("/dummyroute", dummyLink);
 
-router.get("/createComment", createComment);
+router.post("/comments/create", createComment);
 
 //export
 module.exports = router;
