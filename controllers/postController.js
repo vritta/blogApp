@@ -30,7 +30,7 @@ exports.createPost = async (req,res)=>{
         // console.log("error in post -", error.message);
         return res.status(500).json({
             error:"Error while creating new post in post request.",
-        })
+        });
     };
 }
 
