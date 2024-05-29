@@ -22,3 +22,24 @@ exports.likePost = async (req, res) => {
         });
     }
 };
+
+exports.unlikePost = async (req, res) => {
+    try{
+        const {post, like} = req.body;
+        
+        //find and delete the like collection
+        const deletedLike = await Like.findOneAndDelete({post: post, _id:like});
+        
+        //update the postr collection
+        const updatedPost = await Post.findByIdAndUpdate(post, {$pull: {likes: deletedLike._id}}, {new:true});
+        // .populate("likes").exec();
+        res.status(500).json({
+            post: updatedPost,
+        })
+    }
+    catch(error){
+        return res.status(500).json({
+            error:"Error while creating new unlike in post request.",
+        });
+    }
+};
