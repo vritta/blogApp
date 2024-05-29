@@ -13,7 +13,7 @@ router.post("/likes/unlike", unlikePost);
 router.post("/comments/create", createComment);
 
 router.post("/posts/create", createPost);
-router.get("/posts/get", getAllPosts);
+router.get("/posts", getAllPosts);
 
 //export
 module.exports = router;
